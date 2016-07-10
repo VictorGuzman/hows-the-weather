@@ -1,0 +1,51 @@
+body {
+  color: white;
+  background-color: rgb(10, 151, 167);
+}
+
+footer {
+  a {
+    text-decoration: none !important;
+    color: white;
+    &:hover {
+      color: white;
+    }
+    &:focus {
+      color: white;
+    }
+  }
+  font-family: 'Dosis',
+  sans-serif;
+}
+
+#title-wrapper {
+  h1 {
+    font-size: 86px !important;
+  }
+  background-color: inherit !important;
+  font-family: 'Lato',
+  sans-serif;
+}
+
+#icon-wrapper {
+  font-size: 85px;
+}
+
+#temp-wrapper {
+  font-size: 85px;
+}
+
+#temp-switcher {
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.info-wrappers {
+  background-color: inherit;
+  font-family: 'Dosis', sans-serif;
+}
+
+.night-mode {
+  background-color: rgb(6,42,95);
+  color: rgb(242,249,165);
+}

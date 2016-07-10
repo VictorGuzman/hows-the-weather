@@ -1,0 +1,49 @@
+body {
+  color: white;
+  background-color: #0a97a7;
+}
+
+footer {
+  font-family: 'Dosis', sans-serif;
+}
+footer a {
+  text-decoration: none !important;
+  color: white;
+}
+footer a:hover {
+  color: white;
+}
+footer a:focus {
+  color: white;
+}
+
+#title-wrapper {
+  background-color: inherit !important;
+  font-family: 'Lato', sans-serif;
+}
+#title-wrapper h1 {
+  font-size: 86px !important;
+}
+
+#icon-wrapper {
+  font-size: 85px;
+}
+
+#temp-wrapper {
+  font-size: 85px;
+}
+
+#temp-switcher {
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.info-wrappers {
+  background-color: inherit;
+  font-family: 'Dosis', sans-serif;
+}
+
+.night-mode {
+  background-color: #062a5f;
+  color: #f2f9a5;
+}
