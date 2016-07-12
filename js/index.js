@@ -4,23 +4,20 @@ $(document).ready(function() {
 });
 
 /* Retrieves all weather info based on IP coords */
-function getWheatherInfo() {
-  var ipApiUrl = "http://ip-api.com/json/?callback=?";
-  $.getJSON(ipApiUrl, function(data) {
-    var coords = {}
-    coords["lon"] = data.lon;
-    coords["lat"] = data.lat;
-    weatherApiCall(coords);
+function getWheatherInfo() {  
+  var ipInfoUrl = "http://ipinfo.io";
+  $.getJSON(ipInfoUrl, function(data){
+    weatherApiCall(data.city, data.country);
   });
 }
 
 /* Calls the weather API with the given coords */
-function weatherApiCall(coords) {
+function weatherApiCall(city, country) {
   var openWeatherApiUrl = "http://api.openweathermap.org/data/2.5/weather?";
-  var latParam = "lat=" + coords.lat;
-  var lonParam = "lon=" + coords.lon;
+  var locationParams = "q=" + city + "," +  country;
+  var unitParam = "units=imperial";
   var openWeatherApiKey = "APPID=2d74c94193307c75761e2fb370b58cc1";
-  var openWeatherApiCall = openWeatherApiUrl + latParam + "&" + lonParam + "&" + openWeatherApiKey;
+  var openWeatherApiCall = openWeatherApiUrl + locationParams + "&" + openWeatherApiKey + "&" + unitParam;
   $.getJSON(openWeatherApiCall, function(data) {
     var weatherData = {};
     var baseImgUrl = "https://openweathermap.org/img/w/";
@@ -30,7 +27,6 @@ function weatherApiCall(coords) {
     weatherData["city"] = data.name;
     weatherData["shortDesc"] = data.weather[0].main;
     weatherData["longDesc"] = data.weather[0].description;
-    console.log(weatherData);
     drawWeatherInfo(weatherData);
   });
 }
