@@ -4,9 +4,9 @@ $(document).ready(function() {
 });
 
 /* Retrieves all weather info based on IP coords */
-function getWheatherInfo() {  
+function getWheatherInfo() {
   var ipInfoUrl = "http://ipinfo.io";
-  $.getJSON(ipInfoUrl, function(data){
+  $.getJSON(ipInfoUrl, function(data) {
     weatherApiCall(data.city, data.country);
   });
 }
@@ -14,10 +14,10 @@ function getWheatherInfo() {
 /* Calls the weather API with the given coords */
 function weatherApiCall(city, country) {
   var openWeatherApiUrl = "http://api.openweathermap.org/data/2.5/weather?";
-  var locationParams = "q=" + city + "," +  country;
-  var unitParam = "units=imperial";
-  var openWeatherApiKey = "APPID=2d74c94193307c75761e2fb370b58cc1";
-  var openWeatherApiCall = openWeatherApiUrl + locationParams + "&" + openWeatherApiKey + "&" + unitParam;
+  var locationParams = "q=" + city + "," + country;
+  var unitParam = "&units=imperial";
+  var openWeatherApiKey = "&APPID=2d74c94193307c75761e2fb370b58cc1";
+  var openWeatherApiCall = openWeatherApiUrl + locationParams + unitParam + openWeatherApiKey;
   $.getJSON(openWeatherApiCall, function(data) {
     var weatherData = {};
     var baseImgUrl = "https://openweathermap.org/img/w/";
